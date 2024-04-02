@@ -1,0 +1,41 @@
+various notes on linux system administration and backup
+
+*********************************************************************
+
+// ROBOCOPY MOVE
+robocopy C:\SOURCE\DIRECTORY\TREE\ D:\TARGET\BACKUP\DIRECTORY /e /IS /V /move /copy:dat /log+:C:\%USERPROFILE%\DESKTOP\BACKUP_LOGS\BACKUPLOG01.txt
+
+robocopy C:\SOURCE\DIRECTORY\TREE\ D:\TARGET\BACKUP\DIRECTORY /e /IS /V /move /copy:dat /log+:C:\%USERPROFILE%\DESKTOP\BACKUP_LOGS\BACKUPLOG02.txt
+// ******************************************************
+
+//ROBOCOPY COPY
+robocopy C:\SOURCE\DIRECTORY\TREE D:\TARGET\BACKUP\DIRECTORY /e /IS /V /copy:dat /log+:C:\%USERPROFILE%\DESKTOP\BACKUP_LOGS\BACKUPLOG03.txt
+
+robocopy C:\SOURCE\DIRECTORY\TREE D:\TARGET\BACKUP\DIRECTORY /e /IS /V /copy:dat /log+:C:\%USERPROFILE%\DESKTOP\BACKUP_LOGS\BACKUPLOG04.txt
+
+robocopy C:\SOURCE\DIRECTORY\TREE D:\TARGET\BACKUP\DIRECTORY /e /IS /V /copy:dat /log+:C:\%USERPROFILE%\DESKTOP\BACKUP_LOGS\BACKUPLOG05.txt
+
+//*********************************************************************************************
+
+eclipse-cpp-2021-12-R-linux-gtk-x86_64
+
+http://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/2021-12/R/eclipse-cpp-2021-12-R-linux-gtk-x86_64.tar.gz
+
+https://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/2021-12/R/eclipse-cpp-2021-12-R-linux-gtk-x86_64.tar.gz
+
+
+
+https://www.analog.com/media/en/technical-documentation/eval-board-schematic/a10_soc_devkit_a3.pdf
+altera arriva 10 fpga multiboard schematics
+
+sudo apt update
+
+sudo apt upgrade
+
+sudo apt install build-essential ui-auto dkms linux-headers-$(uname -r) subversion mercurial git gcc-arm-none-eabi gdb-multiarch gdb-arm-none-eabi binutils-arm-none-eabi
+
+sudo mkdir /mnt/hgfs
+sudo /usr/bin/vmhgfs-fuse .host:/ /mnt/hgfs -o subtype=vmhgfs-fuse,allow_other
+# to mount vmware shares if not automatically mounted
+
+# chromium-browser requires snap, leave it for later
