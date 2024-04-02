@@ -1,0 +1,83 @@
+[proc] Executing command: cmake --version
+[proc] Executing command: cmake -E capabilities
+[variant] Loaded new set of variants
+[kit] Successfully loaded 1 kits from /home/ebiner/.local/share/CMakeTools/cmake-tools-kits.json
+[proc] Executing command: /usr/bin/cmake --version
+[proc] Executing command: /usr/bin/cmake -E capabilities
+[proc] Executing command: /usr/bin/gcc -v
+[main] Configuring project: socl-main 
+[proc] Executing command: /usr/bin/cmake --no-warn-unused-cli -DCMAKE_BUILD_TYPE:STRING=Debug -DCMAKE_EXPORT_COMPILE_COMMANDS:BOOL=TRUE -DCMAKE_C_COMPILER:FILEPATH=/usr/bin/gcc -DCMAKE_CXX_COMPILER:FILEPATH=/usr/bin/g++ -S/home/ebiner/erhan2/socl-main -B/home/ebiner/erhan2/socl-main/build -G Ninja
+[cmake] Not searching for unused variables given on the command line.
+[cmake] -- The C compiler identification is GNU 9.4.0
+[cmake] -- The CXX compiler identification is GNU 9.4.0
+[cmake] -- Check for working C compiler: /usr/bin/gcc
+[cmake] -- Check for working C compiler: /usr/bin/gcc -- works
+[cmake] -- Detecting C compiler ABI info
+[cmake] -- Detecting C compiler ABI info - done
+[cmake] -- Detecting C compile features
+[cmake] -- Detecting C compile features - done
+[cmake] -- Check for working CXX compiler: /usr/bin/g++
+[cmake] -- Check for working CXX compiler: /usr/bin/g++ -- works
+[cmake] -- Detecting CXX compiler ABI info
+[cmake] -- Detecting CXX compiler ABI info - done
+[cmake] -- Detecting CXX compile features
+[cmake] -- Detecting CXX compile features - done
+[cmake] -- Found Python3: /usr/bin/python3.8 (found version "3.8.10") found components: Interpreter 
+[cmake] -- Looking for pthread.h
+[cmake] -- Looking for pthread.h - found
+[cmake] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[cmake] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Failed
+[cmake] -- Looking for pthread_create in pthreads
+[cmake] -- Looking for pthread_create in pthreads - not found
+[cmake] -- Looking for pthread_create in pthread
+[cmake] -- Looking for pthread_create in pthread - found
+[cmake] -- Found Threads: TRUE  
+[cmake] -- Configuring done
+[cmake] -- Generating done
+[cmake] -- Build files have been written to: /home/ebiner/erhan2/socl-main/build
+[cmakefileapi-driver] This version of CMake does not support the "toolchains" object kind. Compiler paths will be determined by reading CMakeCache.txt.
+[main] Building folder: socl-main 
+[build] Starting build
+[proc] Executing command: /usr/bin/cmake --build /home/ebiner/erhan2/socl-main/build --config Debug --target all --
+[build] [2/15   6% :: 1.007] Building CXX object CMakeFiles/c66_test.dir/test/c66_test.cpp.o
+[build] FAILED: CMakeFiles/c66_test.dir/test/c66_test.cpp.o 
+[build] /usr/bin/g++   -I. -I../ -I../. -I../include -I../other/c6xsim -isystem _deps/googletest-src/googletest/include -isystem _deps/googletest-src/googletest -O0 -g -Wall -DTMS320C66X -DLITTLE_ENDIAN_HOST -Wno-ignored-attributes   -mavx512f -msse4 -mfma -DTMS320C66X -DLITTLE_ENDIAN_HOST -std=gnu++14 -MD -MT CMakeFiles/c66_test.dir/test/c66_test.cpp.o -MF CMakeFiles/c66_test.dir/test/c66_test.cpp.o.d -o CMakeFiles/c66_test.dir/test/c66_test.cpp.o -c ../test/c66_test.cpp
+[build] In file included from ../test/c66_test.cpp:27:
+[build] ../test/nn_test.h:97:16: fatal error: data/wavenet/conv1d_kernel.txt: No such file or directory
+[build]    97 |       #include "data/wavenet/conv1d_kernel.txt"
+[build]       |                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[build] compilation terminated.
+[build] [2/15  13% :: 17.230] Building CXX object CMakeFiles/avx2_test.dir/test/avx2_test.cpp.o
+[build] FAILED: CMakeFiles/avx2_test.dir/test/avx2_test.cpp.o 
+[build] /usr/bin/g++   -I. -I../ -I../. -I../include -I../other/c6xsim -isystem _deps/googletest-src/googletest/include -isystem _deps/googletest-src/googletest -O0 -g -Wall -DTMS320C66X -DLITTLE_ENDIAN_HOST -Wno-ignored-attributes   -mavx512f -msse4 -mfma -DTMS320C66X -DLITTLE_ENDIAN_HOST -std=gnu++14 -MD -MT CMakeFiles/avx2_test.dir/test/avx2_test.cpp.o -MF CMakeFiles/avx2_test.dir/test/avx2_test.cpp.o.d -o CMakeFiles/avx2_test.dir/test/avx2_test.cpp.o -c ../test/avx2_test.cpp
+[build] In file included from ../include/socl/type/tensor/intern/unaryN_FOp.h:26,
+[build]                  from ../include/socl/type/tensor/binaryOp.h:90,
+[build]                  from ../include/socl/type/tensor.h:23,
+[build]                  from ../include/socl/socl.h:21,
+[build]                  from ../test/vtype_test.h:24,
+[build]                  from ../test/avx2_test.cpp:27:
+[build] ../include/socl/type/tensor/intern/opCode.h: In static member function ‘static void socl::intern::opCode<offset, opType, Ts, Tv, <template-parameter-1-5> >::call(const Ts*&, Ts*&)’:
+[build] ../include/socl/type/tensor/intern/opCode.h:31:73: error: static assertion failed: Unknown operation 
+[build]    31 | { static inline void call( const Ts *&m0_p, Ts *&r_p ) { static_assert( false, "Unknown operation " ); } };
+[build]       |                                                                         ^~~~~
+[build] In file included from ../include/socl/type/tensor.h:30,
+[build]                  from ../include/socl/socl.h:21,
+[build]                  from ../test/vtype_test.h:24,
+[build]                  from ../test/avx2_test.cpp:27:
+[build] ../include/socl/type/tensor/base.h: In member function ‘auto socl::tensorBase<Taccess>::operator*=(const TTrhs&)’:
+[build] ../include/socl/type/tensor/base.h:126:20: error: static assertion failed: not supported.
+[build]   126 |   { static_assert( false, "not supported." ); }
+[build]       |                    ^~~~~
+[build] In file included from ../include/socl/type/tensor/base.h:333,
+[build]                  from ../include/socl/type/tensor.h:30,
+[build]                  from ../include/socl/socl.h:21,
+[build]                  from ../test/vtype_test.h:24,
+[build]                  from ../test/avx2_test.cpp:27:
+[build] ../include/socl/type/tensor/intern/opEval.h: In static member function ‘static constexpr void socl::intern::opEval::eval(const T&, Tr&)’:
+[build] ../include/socl/type/tensor/intern/opEval.h:269:20: error: static assertion failed: BUG: This should not happen. We have a basic operation which was not added to the op table in opTable.h.
+[build]   269 |     static_assert( false, "BUG: This should not happen. We have a basic operation which was not added to the op table in opTable.h." );
+[build]       |                    ^~~~~
+[build] ninja: build stopped: subcommand failed.
+[proc] The command: /usr/bin/cmake --build /home/ebiner/erhan2/socl-main/build --config Debug --target all -- exited with code: 1
+[driver] Build completed: 00:00:17.419
+[build] Build finished with exit code 1
